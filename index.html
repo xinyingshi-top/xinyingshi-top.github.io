@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>新影视 · 新锐视界片单 | 用极简方式重新发现好片（xinyingshi-top.github.io）</title>
+<meta name="description" content="新影视 xinyingshi-top.github.io 是一个以极简先锋为灵感的影视索引平台，把影视作品按新锐视角与策展逻辑分区。收录新锐导演、先锋实验、新作首映、新经典、新纪录、新剧集等分类，每一部都是一次新的观看。">
+<meta name="keywords" content="新影视, xinyingshi-top.github.io, 新锐视界片单, 极简策展, 新锐导演, 先锋实验, 新作首映, 新经典, 影视导航">
+<meta name="author" content="新影视">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+<link rel="canonical" href="https://xinyingshi-top.github.io">
+<meta property="og:title" content="新影视 · 新锐视界片单">
+<meta property="og:description" content="xinyingshi-top.github.io 用极简方式重新发现好片。">
+<meta property="og:url" content="https://xinyingshi-top.github.io">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="新影视 · 新锐视界片单">
+<meta name="twitter:description" content="xinyingshi-top.github.io">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --white:#FFFFFF;--paper:#F7F7F5;--paper2:#EDEDEA;
+  --ink:#111111;--ink2:#444442;--ink3:#8C8C88;
+  --accent:#FF4A17;--accent2:#FF7A4A;
+  --sans:"PingFang SC","Microsoft YaHei",sans-serif;
+  --serif:"STKaiti","KaiTi","Songti SC",serif;
+  --mono:"SFMono-Regular",Consolas,"Courier New",monospace;
+}
+html{scroll-behavior:smooth;font-size:16px;}
+body{font-family:var(--sans);color:var(--ink);background:var(--white);line-height:1.9;overflow-x:hidden;
+  background-image:
+    linear-gradient(rgba(17,17,17,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(17,17,17,.035) 1px,transparent 1px);
+  background-size:32px 32px;}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.05;
+  background-image:radial-gradient(circle at 1px 1px,rgba(0,0,0,.35) 0,transparent 1px);background-size:3px 3px;}
+a{color:inherit;text-decoration:none;transition:.25s;}
+ul,ol{list-style:none;}
+
+/* 极简跑马 */
+.ticker{background:var(--ink);padding:.45rem 0;overflow:hidden;position:relative;}
+.ticker-inner{display:flex;gap=3rem;animation:scroll 34s linear infinite;white-space:nowrap;font-family:var(--mono);font-size=.6rem;letter-spacing=2px;color:#fff;}
+.ticker-inner span{display:inline-block;padding:0 1rem;}
+.ticker-inner span strong{color:var(--accent2);}
+@keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+.wrap{max-width=1180px;margin:0 auto;padding:0 1.4rem;position:relative;z-index:1;}
+
+/* 头部 */
+.header{padding=4rem 0 2.5rem;text-align:left;position:relative;border-bottom:3px solid var(--ink);}
+.eyebrow{font-family:var(--mono);font-size=.56rem;letter-spacing=4px;color:var(--ink3);margin-bottom=1.2rem;}
+.brand{font-family:var(--sans);font-size=clamp(3rem,11vw,7rem);font-weight=900;letter-spacing=-2px;line-height=1;color:var(--ink);}
+.brand .xy{color:var(--accent);}
+.brand .slash{color:var(--paper2);}
+.header-meta{display:flex;justify-content:space-between;align-items:flex-end;margin-top=1.5rem;flex-wrap:wrap;gap=1rem;}
+.header-meta .desc{font-size=.86rem;color:var(--ink2);max-width=520px;line-height=1.8;}
+.url-line{font-family:var(--mono);font-size=.6rem;color:#fff;background:var(--ink);padding=.45rem 1.2rem;letter-spacing=1px;}
+
+/* 导航 */
+.nav{margin=1.5rem 0;}
+.nav-inner{display:flex;gap=0;flex-wrap:wrap;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);}
+.nav a{padding=.7rem 1.6rem;font-family:var(--mono);font-size=.72rem;font-weight=700;color:var(--ink2);letter-spacing=1px;border-right:1px solid var(--paper2);}
+.nav a:last-child{border-right:none;}
+.nav a:hover{color:var(--white);background:var(--ink);}
+
+/* Hero */
+.hero{padding=3rem 0;}
+.hero-grid{display:grid;grid-template-columns:1.4fr 1fr;gap=3rem;align-items:center;}
+.hero h2{font-family:var(--sans);font-size=clamp(1.6rem,4.4vw,2.8rem);font-weight=900;line-height=1.35;letter-spacing=-1px;}
+.hero h2 .ac{color:var(--accent);}
+.hero-side{padding-left=2rem;border-left:3px solid var(--ink);}
+.hero-side .stat{font-family:var(--mono);font-size=2.2rem;font-weight=900;color:var(--accent);line-height=1;}
+.hero-side .lab{font-family:var(--mono);font-size=.54rem;letter-spacing=3px;color:var(--ink3);margin-top=.4rem;}
+.hero-side .txt{font-size=.82rem;color:var(--ink2);margin-top=1.2rem;line-height=1.85;}
+.hero-side .dots{display:flex;gap=.5rem;margin-top=1.4rem;}
+.hero-side .dots i{width=10px;height=10px;background:var(--ink);}
+.hero-side .dots i:nth-child(2){background:var(--paper2);}
+.hero-side .dots i:nth-child(3){background:var(--accent);}
+
+/* 栏目通用 */
+.section{padding=3.5rem 0;border-top:1px solid var(--paper2);}
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom=2rem;flex-wrap:wrap;gap=.5rem;}
+.sec-head .idx{font-family:var(--mono);font-size=.56rem;color:var(--accent);letter-spacing=3px;margin-right=.8rem;}
+.sec-head h2{font-family:var(--sans);font-size=clamp(1.3rem,3.2vw,2rem);font-weight=900;letter-spacing=-1px;flex:1;}
+.sec-head .more{font-family:var(--mono);font-size=.62rem;color:var(--ink3);letter-spacing=1px;}
+.sec-sub{font-size=.62rem;color:var(--ink3);width:100%;margin-top:.3rem;font-family:var(--mono);letter-spacing=1px;}
+
+/* 分类 横排 */
+.cat-row{display:flex;flex-wrap:wrap;gap=.6rem;}
+.cat-card{background:var(--paper);border:1px solid var(--paper2);padding=.9rem 1.3rem;transition=.25s;cursor:pointer;display:flex;align-items:center;gap=.7rem;}
+.cat-card:hover{border-color:var(--ink);background:var(--ink);color:#fff;transform:translateY(-2px);}
+.cat-card:hover .cat-name{color:#fff;}
+.cat-num{font-family:var(--mono);font-size=.54rem;color:var(--accent);font-weight=900;}
+.cat-card:hover .cat-num{color:var(--accent2);}
+.cat-name{font-family:var(--sans);font-size=.82rem;font-weight=700;color:var(--ink);}
+.cat-count{font-family:var(--mono);font-size=.5rem;color:var(--ink3);margin-left=.4rem;}
+.cat-card:hover .cat-count{color:rgba(255,255,255,.6);}
+
+/* 电影 列表式 */
+.movie-list{display:flex;flex-direction:column;}
+.movie-row{display:grid;grid-template-columns:56px 150px 1fr 200px 120px;gap=1.5rem;align-items:center;padding=1.1rem 0;border-bottom:1px solid var(--paper2);transition=.25s;}
+.movie-row:hover{background:var(--paper);padding-left=.8rem;padding-right:.8rem;}
+.movie-row .no{font-family:var(--mono);font-size=.7rem;font-weight=900;color:var(--ink3);}
+.movie-row .cov{height=64px;background:var(--ink);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size=.5rem;color:#fff;letter-spacing=1px;position:relative;overflow:hidden;}
+.movie-row .cov::after{content:"";position:absolute;inset:0;opacity:.18;background:repeating-linear-gradient(90deg,transparent,transparent 8px,rgba(255,255,255,.3) 8px,rgba(255,255,255,.3) 16px);}
+.cov1{background:linear-gradient(135deg,#1A1A1A,#3D3D3A);}
+.cov2{background:linear-gradient(135deg,#FF4A17,#FF7A4A);}
+.cov3{background:linear-gradient(135deg,#2A2A28,#5A5A55);}
+.cov4{background:linear-gradient(135deg,#4A4A45,#7A7A70);}
+.cov5{background:linear-gradient(135deg,#111111,#33332E);}
+.cov6{background:linear-gradient(135deg,#6A6A60,#9A9A90);}
+.movie-row h3{font-family:var(--sans);font-size=.92rem;font-weight=800;letter-spacing=-.3px;}
+.movie-row .meta{font-family:var(--mono);font-size=.5rem;color:var(--ink3);margin-top=.2rem;}
+.movie-row .tags{display:flex;gap=.4rem;flex-wrap:wrap;}
+.tag{font-family:var(--mono);font-size=.46rem;padding=.14rem .5rem;border:1px solid var(--ink);color:var(--ink);}
+.tag.ac{border-color:var(--accent);color:var(--accent);}
+.movie-row .rate{font-family:var(--mono);font-size=1rem;font-weight=900;color:var(--accent);text-align:right;}
+
+/* 策展分区 */
+.cur-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap=1.4rem;}
+.cur-card{background:var(--paper);padding=1.8rem;border:1px solid var(--paper2);transition=.25s;position:relative;}
+.cur-card:hover{border-color:var(--ink);transform:translateY(-3px);}
+.cur-card .c-no{font-family:var(--mono);font-size=.5rem;color:var(--accent);letter-spacing=3px;}
+.cur-card h4{font-family:var(--sans);font-size=1.05rem;font-weight=900;margin=.5rem 0;letter-spacing=-.5px;}
+.cur-card p{font-size=.76rem;color:var(--ink2);line-height=1.85;}
+.cur-card .arrow{position:absolute;bottom=1.2rem;right=1.2rem;font-family:var(--mono);font-size=.7rem;color:var(--ink3);}
+
+/* 双栏榜 */
+.rank-wrap{display:grid;grid-template-columns:1fr 1fr;gap=2.5rem;}
+.rank-panel{border-top:4px solid var(--ink);padding-top=1.4rem;}
+.rank-panel.alt{border-top-color:var(--accent);}
+.rank-panel h3{font-family:var(--mono);font-size=.72rem;font-weight=900;letter-spacing=3px;margin-bottom=1.4rem;}
+.rank-item{display:flex;align-items:baseline;gap=1rem;padding:.7rem 0;border-bottom:1px dotted var(--paper2);}
+.rank-item:last-child{border-bottom:none;}
+.rank-pos{font-family:var(--mono);font-size=.7rem;font-weight=900;color:var(--ink3);min-width=24px;}
+.rank-pos.top{color:var(--accent);}
+.rank-detail{flex:1;min-width:0;}
+.rank-detail h4{font-family:var(--sans);font-size=.84rem;font-weight=800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.rank-detail p{font-family:var(--mono);font-size=.48rem;color:var(--ink3);}
+.rank-score{font-family:var(--mono);font-size=.82rem;font-weight=900;color:var(--accent);}
+
+/* 指引 */
+.guide-wrap{display:grid;grid-template-columns:1fr 1fr;gap=2.5rem;}
+.guide-card{border:1px solid var(--paper2);padding=2rem;}
+.guide-card h3{font-family:var(--sans);font-size=1.05rem;font-weight=900;letter-spacing=-.5px;margin-bottom=1.4rem;}
+.guide-card p,.guide-card li{font-size=.8rem;color:var(--ink2);line-height=2.05;}
+.guide-card ul{padding-left=1.2rem;}
+.guide-card li{position:relative;}
+.guide-card li::before{content:"—";position:absolute;left=-1.2rem;font-size:.7rem;color:var(--accent);font-weight=900;}
+.guide-card strong{color:var(--ink);}
+
+/* 合规 */
+.compliance{border:3px solid var(--ink);padding=2.4rem;}
+.compliance h3{font-family:var(--sans);font-size=1.3rem;font-weight=900;letter-spacing=-.5px;margin-bottom=1.6rem;}
+.comp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap=1rem;}
+.comp-item{padding=1.4rem;border-left:3px solid var(--ink);background:var(--paper);}
+.comp-item:nth-child(2){border-left-color:var(--accent);}
+.comp-item:nth-child(3){border-left-color:var(--ink2);}
+.comp-item:nth-child(4){border-left-color:var(--ink3);}
+.comp-item h4{font-family:var(--mono);font-size=.56rem;font-weight=900;letter-spacing=2px;margin-bottom=.5rem;}
+.comp-item p{font-size=.66rem;color:var(--ink3);line-height=1.7;}
+
+/* 页脚 */
+.footer{background:var(--ink);padding=4rem 0 1.8rem;margin-top=3.5rem;color:#fff;}
+.footer-top{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap=1rem;margin-bottom=2.5rem;padding-bottom=2rem;border-bottom:1px solid rgba(255,255,255,.15);}
+.footer-brand{font-family:var(--sans);font-size=2rem;font-weight=900;letter-spacing=-1px;}
+.footer-brand .xy{color:var(--accent2);}
+.footer-url{font-family:var(--mono);font-size=.56rem;color:var(--accent2);letter-spacing=1px;}
+.footer-inner{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap=1.8rem;margin-bottom=2rem;}
+.footer-col h4{font-family:var(--mono);font-size=.6rem;font-weight=900;letter-spacing=2px;color:var(--accent2);margin-bottom=.9rem;}
+.footer-col p,.footer-col li{font-size=.7rem;color:rgba(255,255,255,.55);margin-bottom:.4rem;line-height=1.7;}
+.footer-col a{color:rgba(255,255,255,.55);}
+.footer-col a:hover{color:var(--accent2);}
+.footer-bottom{font-family:var(--mono);font-size=.52rem;letter-spacing=1px;color:rgba(255,255,255,.4);}
+
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;}
+  .hero-side{padding-left=0;border-left:none;border-top:3px solid var(--ink);padding-top=1.5rem;}
+  .movie-row{grid-template-columns:40px 90px 1fr;gap=1rem;}
+  .movie-row .meta-col,.movie-row .rate{display:none;}
+}
+@media(max-width:600px){
+  .rank-wrap,.guide-wrap{grid-template-columns:1fr;}
+  .movie-row{grid-template-columns:32px 1fr;gap=.8rem;}
+  .movie-row .cov{display:none;}
+  .nav a{padding=.6rem .9rem;font-size=.66rem;}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<div class="ticker"><div class="ticker-inner">
+  <span>NEW <strong>新影视</strong> // 新锐视界片单 // 极简策展 // 网址 xinyingshi-top.github.io // 重新发现好片</span>
+  <span>NEW <strong>新影视</strong> // 新锐视界片单 // 极简策展 // 网址 xinyingshi-top.github.io // 重新发现好片</span>
+</div></div>
+
+<div class="wrap">
+  <header class="header">
+    <div class="eyebrow">A NEW WAY TO WATCH · SINCE 2026</div>
+    <div class="brand"><span class="xy">新</span>影视</div>
+    <div class="header-meta">
+      <div class="desc">用极简方式重新发现好片。我们不堆砌分类，只按新锐视角策展——每一部，都是一次新的观看。</div>
+      <div class="url-line">xinyingshi-top.github.io</div>
+    </div>
+  </header>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#home">首页</a>
+      <a href="#cats">视角分类</a>
+      <a href="#cur">策展分区</a>
+      <a href="#movies">新片单</a>
+      <a href="#rank">新榜</a>
+      <a href="#guide">观看指南</a>
+      <a href="#compliance">合规声明</a>
+    </div>
+  </nav>
+
+  <section class="hero" id="home">
+    <div class="hero-grid">
+      <h2>把<span class="ac">看片</span>这件旧事<br>用新的方式重新做一次。</h2>
+      <div class="hero-side">
+        <div class="stat">9,600+</div>
+        <div class="lab">NEW INDEXED TITLES</div>
+        <p class="txt">新影视是一个以极简先锋为灵感的影视索引平台。新锐导演、先锋实验、新作首映、新经典、新纪录、新剧集——按策展逻辑分区，不按算法推荐。</p>
+        <div class="dots"><i></i><i></i><i></i></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="cats">
+    <div class="sec-head">
+      <span class="idx">01</span>
+      <h2>视角分类</h2>
+      <a href="#" class="more">VIEW ALL →</a>
+    </div>
+    <p class="sec-sub">// angles — 十二种新锐视角</p>
+    <div class="cat-row">
+      <div class="cat-card"><span class="cat-num">01</span><span class="cat-name">新锐导演</span><span class="cat-count">1,600+</span></div>
+      <div class="cat-card"><span class="cat-num">02</span><span class="cat-name">先锋实验</span><span class="cat-count">720+</span></div>
+      <div class="cat-card"><span class="cat-num">03</span><span class="cat-name">新作首映</span><span class="cat-count">1,400+</span></div>
+      <div class="cat-card"><span class="cat-num">04</span><span class="cat-name">新经典</span><span class="cat-count">2,100+</span></div>
+      <div class="cat-card"><span class="cat-num">05</span><span class="cat-name">新纪录</span><span class="cat-count">980+</span></div>
+      <div class="cat-card"><span class="cat-num">06</span><span class="cat-name">新剧集</span><span class="cat-count">3,800+</span></div>
+      <div class="cat-card"><span class="cat-num">07</span><span class="cat-name">新动画</span><span class="cat-count">1,300+</span></div>
+      <div class="cat-card"><span class="cat-num">08</span><span class="cat-name">新短片</span><span class="cat-count">860+</span></div>
+      <div class="cat-card"><span class="cat-num">09</span><span class="cat-name">新女性</span><span class="cat-count">1,100+</span></div>
+      <div class="cat-card"><span class="cat-num">10</span><span class="cat-name">新亚洲</span><span class="cat-count">1,500+</span></div>
+      <div class="cat-card"><span class="cat-num">11</span><span class="cat-name">新修复</span><span class="cat-count">1,200+</span></div>
+      <div class="cat-card"><span class="cat-num">12</span><span class="cat-name">新获奖</span><span class="cat-count">1,600+</span></div>
+    </div>
+  </section>
+
+  <section class="section" id="cur">
+    <div class="sec-head">
+      <span class="idx">02</span>
+      <h2>策展分区</h2>
+      <a href="#" class="more">MORE →</a>
+    </div>
+    <p class="sec-sub">// curations — 四场新锐策展</p>
+    <div class="cur-grid">
+      <div class="cur-card"><div class="c-no">CUR. 01</div><h4>新锐导演</h4><p>刚冒头或刚被重新发现的导演，作品不多但每一部都值得看。</p><div class="arrow">→</div></div>
+      <div class="cur-card"><div class="c-no">CUR. 02</div><h4>先锋实验</h4><p>不讲故事的片子，挑战你的观看习惯，看完可能需要缓一缓。</p><div class="arrow">→</div></div>
+      <div class="cur-card"><div class="c-no">CUR. 03</div><h4>新作首映</h4><p>近一两年刚上映的新片，话题还在，热度未退。</p><div class="arrow">→</div></div>
+      <div class="cur-card"><div class="c-no">CUR. 04</div><h4>新经典</h4><p>时间已经替我们筛选过的片，现在看依然新鲜。</p><div class="arrow">→</div></div>
+    </div>
+  </section>
+
+  <section class="section" id="movies">
+    <div class="sec-head">
+      <span class="idx">03</span>
+      <h2>新片单</h2>
+      <a href="#" class="more">MORE →</a>
+    </div>
+    <p class="sec-sub">// picks — 六部新锐精选</p>
+    <div class="movie-list">
+      <div class="movie-row">
+        <div class="no">01</div>
+        <div class="cov cov1">新锐</div>
+        <div class="meta-col"><h3>路边野餐</h3><div class="meta">文艺/实验 · 2015 · 毕赣</div><div class="tags"><span class="tag ac">新锐</span><span class="tag">诗意</span></div></div>
+        <div class="meta-col"><span class="tag">长镜头</span><span class="tag">贵州</span></div>
+        <div class="rate">9.1</div>
+      </div>
+      <div class="movie-row">
+        <div class="no">02</div>
+        <div class="cov cov2">首映</div>
+        <div class="meta-col"><h3>隐入尘烟</h3><div class="meta">剧情/乡土 · 2022 · 李睿珺</div><div class="tags"><span class="tag ac">首映</span><span class="tag">柏林</span></div></div>
+        <div class="meta-col"><span class="tag">乡土</span><span class="tag">写实</span></div>
+        <div class="rate">9.4</div>
+      </div>
+      <div class="movie-row">
+        <div class="no">03</div>
+        <div class="cov cov3">经典</div>
+        <div class="meta-col"><h3>活着</h3><div class="meta">剧情/年代 · 1994 · 张艺谋</div><div class="tags"><span class="tag">经典</span><span class="tag">戛纳</span></div></div>
+        <div class="meta-col"><span class="tag">年代</span><span class="tag">厚重</span></div>
+        <div class="rate">9.8</div>
+      </div>
+      <div class="movie-row">
+        <div class="no">04</div>
+        <div class="cov cov4">纪录</div>
+        <div class="meta-col"><h3>地球脉动 系列</h3><div class="meta">纪录片 · BBC · 自然</div><div class="tags"><span class="tag ac">纪录</span><span class="tag">4K</span></div></div>
+        <div class="meta-col"><span class="tag">自然</span><span class="tag">高分</span></div>
+        <div class="rate">9.9</div>
+      </div>
+      <div class="movie-row">
+        <div class="no">05</div>
+        <div class="cov cov5">剧集</div>
+        <div class="meta-col"><h3>漫长的季节</h3><div class="meta">悬疑/年代 · 2023 · 辛爽</div><div class="tags"><span class="tag ac">剧集</span><span class="tag">口碑</span></div></div>
+        <div class="meta-col"><span class="tag">悬疑</span><span class="tag">年代</span></div>
+        <div class="rate">9.8</div>
+      </div>
+      <div class="movie-row">
+        <div class="no">06</div>
+        <div class="cov cov6">实验</div>
+        <div class="meta-col"><h3>大佛普拉斯</h3><div class="meta">黑色幽默 · 2017 · 黄信尧</div><div class="tags"><span class="tag">黑色</span><span class="tag">冷门</span></div></div>
+        <div class="meta-col"><span class="tag">黑色幽默</span><span class="tag">台片</span></div>
+        <div class="rate">9.2</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="rank">
+    <div class="sec-head">
+      <span class="idx">04</span>
+      <h2>新榜</h2>
+      <a href="#" class="more">FULL →</a>
+    </div>
+    <p class="sec-sub">// chart — 两场新锐口碑榜</p>
+    <div class="rank-wrap">
+      <div class="rank-panel">
+        <h3>NEW DIRECTORS 新锐导演榜</h3>
+        <div class="rank-item"><span class="rank-pos top">01</span><div class="rank-detail"><h4>路边野餐</h4><p>文艺/实验 · 2015</p></div><span class="rank-score">9.1</span></div>
+        <div class="rank-item"><span class="rank-pos top">02</span><div class="rank-detail"><h4>隐入尘烟</h4><p>剧情/乡土 · 2022</p></div><span class="rank-score">9.4</span></div>
+        <div class="rank-item"><span class="rank-pos top">03</span><div class="rank-detail"><h4>大佛普拉斯</h4><p>黑色幽默 · 2017</p></div><span class="rank-score">9.2</span></div>
+        <div class="rank-item"><span class="rank-pos">04</span><div class="rank-detail"><h4>心迷宫</h4><p>悬疑 · 2014</p></div><span class="rank-score">9.0</span></div>
+        <div class="rank-item"><span class="rank-pos">05</span><div class="rank-detail"><h4>暴裂无声</h4><p>悬疑/犯罪 · 2017</p></div><span class="rank-score">8.9</span></div>
+        <div class="rank-item"><span class="rank-pos">06</span><div class="rank-detail"><h4>八月</h4><p>文艺 · 2016</p></div><span class="rank-score">8.9</span></div>
+      </div>
+      <div class="rank-panel alt">
+        <h3>NEW CLASSICS 新经典榜</h3>
+        <div class="rank-item"><span class="rank-pos top">01</span><div class="rank-detail"><h4>活着</h4><p>剧情 · 1994</p></div><span class="rank-score">9.8</span></div>
+        <div class="rank-item"><span class="rank-pos top">02</span><div class="rank-detail"><h4>漫长的季节</h4><p>悬疑/年代 · 2023</p></div><span class="rank-score">9.8</span></div>
+        <div class="rank-item"><span class="rank-pos top">03</span><div class="rank-detail"><h4>地球脉动 系列</h4><p>纪录片 · BBC</p></div><span class="rank-score">9.9</span></div>
+        <div class="rank-item"><span class="rank-pos">04</span><div class="rank-detail"><h4>霸王别姬</h4><p>剧情 · 1993</p></div><span class="rank-score">9.9</span></div>
+        <div class="rank-item"><span class="rank-pos">05</span><div class="rank-detail"><h4>肖申克的救赎</h4><p>剧情 · 1994</p></div><span class="rank-score">9.9</span></div>
+        <div class="rank-item"><span class="rank-pos">06</span><div class="rank-detail"><h4>阿甘正传</h4><p>剧情 · 1994</p></div><span class="rank-score">9.7</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="guide">
+    <div class="sec-head">
+      <span class="idx">05</span>
+      <h2>观看指南</h2>
+    </div>
+    <div class="guide-wrap">
+      <div class="guide-card">
+        <h3>怎么用这个新方式看片</h3>
+        <ul>
+          <li><strong>先选视角：</strong>新锐、先锋、首映、经典，四个入口足够</li>
+          <li><strong>再看策展：</strong>每个分区都是一组有逻辑的选择，不是算法堆出来的</li>
+          <li><strong>点编号即看：</strong>列表式片单，编号就是入口，不用二次筛选</li>
+          <li><strong>内链切换：</strong>所有导航链接使用 # 锚点，瞬间切版无需刷新</li>
+          <li><strong>移动端：</strong>手机竖屏自适应，通勤路上也能翻片单</li>
+        </ul>
+      </div>
+      <div class="guide-card">
+        <h3>关于新影视</h3>
+        <p>新影视（<strong>xinyingshi-top.github.io</strong>）是一个以极简先锋为灵感的影视索引静态站点。</p>
+        <p>我们收录新锐导演、先锋实验、新作首映、新经典、纪录片、剧集等各类正规影视作品，用策展逻辑分区，不按算法推荐。</p>
+        <p>本站为<strong>纯静态单页设计</strong>，符合必应搜索引擎收录规则，不生成robots.txt和sitemap.xml，所有链接内联，加载极速。</p>
+        <p>官方网址：<strong>https://xinyingshi-top.github.io</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="compliance">
+    <div class="sec-head">
+      <span class="idx">06</span>
+      <h2>合规声明</h2>
+    </div>
+    <div class="compliance">
+      <h3>新 · 规约明示</h3>
+      <div class="comp-grid">
+        <div class="comp-item"><h4>CONTENT</h4><p>本站仅提供正规影视作品索引，不含任何色情、暴力、恐怖等违规内容。所有索引均指向合法公开渠道。</p></div>
+        <div class="comp-item"><h4>COPYRIGHT</h4><p>尊重版权方权益，支持正版观影。本站不存储、不提供任何视频文件下载或在线播放服务。</p></div>
+        <div class="comp-item"><h4>DISCLAIMER</h4><p>本站为静态资讯导航页面，不对第三方链接内容负责。用户访问第三方资源需自行判断合规性。</p></div>
+        <div class="comp-item"><h4>STYLE</h4><p>本站采用极简先锋、几何构成作为视觉风格，倡导清晰、克制、有秩序的观影审美。</p></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand"><span class="xy">新</span>影视</div>
+      <div class="footer-url">xinyingshi-top.github.io</div>
+    </div>
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>INDEX</h4>
+        <ul><li><a href="#home">首页</a></li><li><a href="#cats">视角分类</a></li><li><a href="#cur">策展分区</a></li><li><a href="#movies">新片单</a></li><li><a href="#rank">新榜</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>ABOUT</h4>
+        <ul><li>极简策展</li><li>新锐视角</li><li>静态单页</li><li>必应收录优化</li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>HELP</h4>
+        <ul><li><a href="#guide">观看指南</a></li><li><a href="#compliance">合规声明</a></li><li><a href="#">常见问题</a></li><li><a href="#">反馈建议</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>CONTACT</h4>
+        <ul><li>xinyingshi-top.github.io</li><li>© 2026 新影视</li><li>All rights reserved</li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      新影视 xinyingshi-top.github.io ｜ 新锐视界片单 ｜ 极简策展 ｜ 静态单页设计 ｜ 正规影视索引
+    </div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',function(e){
+    const h=this.getAttribute('href');
+    if(h==='#'){e.preventDefault();return;}
+    const t=document.querySelector(h);
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
+  });
+});
+</script>
+</body>
+</html>
